@@ -19,4 +19,23 @@
 
 class User < ApplicationRecord
   has_many :ideas
+
+  before_validation(on: :create) do
+    self.session_token ||= SecureRandom.alphanumeric
+  end
+
+  def is_password?(raw)
+    BCrypt::Password.new(password_digest).is_password?(raw)
+  end
+
+  def password=(raw)
+    self.password_digest = BCrypt::Password.create(raw)
+    @password = raw
+  end
+
+  def reset_session_token!
+    self.session_token = SecureRandom.alphanumeric
+    self.save!
+    session_token
+  end
 end
