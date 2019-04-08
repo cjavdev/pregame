@@ -1,0 +1,11 @@
+<h1>Ideas</h1>
+
+<a href="/ideas/new" class="pull-right btn btn-default">
+  + Add Idea
+</a>
+
+<ul>
+  <% @ideas.each do |idea| %>
+    <li><%= link_to idea.theory, idea %></li>
+  <% end %>
+</ul>
