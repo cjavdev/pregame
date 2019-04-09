@@ -1,0 +1,16 @@
+<% if !current_user %>
+  <a href="/session/new" class="pull-right">Login</a>
+<% else %>
+  <a href="/ideas" class="pull-right">My Ideas</a>
+  <a href="/logout" class="pull-right">Logout</a>
+<% end %>
+
+<h1>Ideas <i class="fas fa-lightbulb"></i></h1>
+
+<div class="ideas">
+  <% @ideas.each do |idea| %>
+    <div class="idea">
+      <%= idea.theory %>
+    </div>
+  <% end %>
+</div>
