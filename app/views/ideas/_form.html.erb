@@ -1,0 +1,33 @@
+<% action = @idea.persisted? ? idea_path(@idea) : ideas_path %>
+
+<form action="<%= action %>" method="post" class="form">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <% if @idea.persisted? %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <div class="form-group">
+    <label for="theory">Theory</label>
+    <input type="text" name="idea[theory]" class="form-control" id="theory" value="<%= @idea.theory %>">
+  </div>
+
+  <div class="form-group">
+    <label for="public">Make this idea public</label>
+    <input type="hidden" name="idea[public]" class="form-control" id="public" value="false">
+    <input type="checkbox" name="idea[public]" class="form-control" id="public" <%= "checked" if @idea.public %>>
+  </div>
+
+  <div class="form-group">
+    <label for="question">Question</label>
+    <textarea name="idea[question]" id="question" class="form-control"><%= @idea.question %></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="competition">Competition</label>
+    <textarea name="idea[competition]" id="competition" class="form-control"><%= @idea.competition %></textarea>
+  </div>
+
+
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>

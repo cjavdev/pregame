@@ -1,5 +1,16 @@
 <h1>Idea</h1>
-<a href="/ideas">All Ideas</a>
+
+<div class="menu">
+  <a href="/ideas">All Ideas</a>
+  <a href="<%= edit_idea_path(@idea) %>">Edit</a>
+</div>
+
+<em>
+  <% if @idea.public %>
+  Published <i class="fas fa-bullhorn"></i>
+  <% end %>
+</em>
+
 
 <h4>Theory</h4>
 <p>
@@ -9,4 +20,9 @@
 <h4>Question</h4>
 <p>
   <%= @idea.question %>
+</p>
+
+<h4>Competition</h4>
+<p>
+  <%= @idea.competition %>
 </p>
