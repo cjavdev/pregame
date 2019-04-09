@@ -19,6 +19,7 @@
 
 class User < ApplicationRecord
   has_many :ideas
+  has_many :personas
 
   before_validation(on: :create) do
     self.session_token ||= SecureRandom.alphanumeric

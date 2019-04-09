@@ -1,0 +1,19 @@
+<h1><%= @persona.name %></h1>
+<a href="/"><i class="fas fa-home"></i></a>
+
+<a href="<%= edit_persona_path(@persona) %>">Edit</a>
+
+<h4>Industry</h4>
+<p>
+  <%= @persona.industry %>
+</p>
+
+<h4>Profile</h4>
+<p>
+  <%= @persona.profile %>
+</p>
+
+<h4>Goals</h4>
+<p>
+  <%= @persona.goals %>
+</p>

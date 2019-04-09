@@ -9,3 +9,18 @@
     <li><%= link_to idea.theory, idea %></li>
   <% end %>
 </ul>
+
+
+<h1>Personas</h1>
+
+<a href="/personas/new" class="pull-right btn btn-default">
+  + Add Persona
+</a>
+
+<ul>
+  <% @personas.each do |persona| %>
+    <li><%= link_to persona.name, persona %></li>
+  <% end %>
+</ul>
+
+

@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
   def index
     @ideas = current_user.ideas.all
+    @personas = current_user.personas.all
   end
 
   def new

@@ -1,0 +1,29 @@
+<% action = @persona.persisted? ? persona_path(@persona) : personas_path %>
+<form action="<%= action %>" method="post" class="form">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% if @persona.persisted? %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="persona[name]" class="form-control" id="name" value="<%= @persona.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="industry">Industry</label>
+    <input type="text" name="persona[industry]" class="form-control" id="industry" value="<%= @persona.industry %>">
+  </div>
+
+  <div class="form-group">
+    <label for="profile">Profile</label>
+    <textarea name="persona[profile]" id="profile" class="form-control"><%= @persona.profile %></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="goals">Goals</label>
+    <textarea name="persona[goals]" id="goals" class="form-control"><%= @persona.goals %></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>
