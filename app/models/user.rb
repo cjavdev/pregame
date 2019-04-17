@@ -18,6 +18,7 @@
 #
 
 class User < ApplicationRecord
+  validates :email, uniqueness: true
   has_many :ideas
   has_many :personas
 
