@@ -4,9 +4,9 @@
   + Add Idea
 </a>
 
-<ul>
+<div class="ui container">
   <% @ideas.each do |idea| %>
-    <li><%= link_to idea.theory, idea %></li>
+    <li class="ui segment"><%= link_to idea.theory, idea %></li>
   <% end %>
 </ul>
 
@@ -22,5 +22,3 @@
     <li><%= link_to persona.name, persona %></li>
   <% end %>
 </ul>
-
-
