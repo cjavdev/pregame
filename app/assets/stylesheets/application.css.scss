@@ -14,4 +14,27 @@
  *= require_self
  */
 
-@import 'semantic-ui';
+// semantic-ui-sass 2.4.4's label partial has calc(--0.05rem ...), which Dart Sass
+// rejects, so the elements are listed here with a patched copy of label
+// (vendor/assets/stylesheets/semantic-ui-patched/_label.scss).
+@import 'semantic-ui/globals/all';
+@import 'semantic-ui/elements/button';
+@import 'semantic-ui/elements/container_variables';
+@import 'semantic-ui/elements/container';
+@import 'semantic-ui/elements/divider';
+@import 'semantic-ui/elements/flag';
+@import 'semantic-ui/elements/header';
+@import 'semantic-ui/elements/icon';
+@import 'semantic-ui/elements/image';
+@import 'semantic-ui/elements/input';
+@import 'semantic-ui-patched/label';
+@import 'semantic-ui/elements/list';
+@import 'semantic-ui/elements/loader';
+@import 'semantic-ui/elements/placeholder';
+@import 'semantic-ui/elements/rail';
+@import 'semantic-ui/elements/reveal';
+@import 'semantic-ui/elements/segment';
+@import 'semantic-ui/elements/step';
+@import 'semantic-ui/collections/all';
+@import 'semantic-ui/views/all';
+@import 'semantic-ui/modules/all';
